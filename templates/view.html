@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<style>
+    *{
+        margin:0px;
+        padding:0px;
+    }
+    body{
+        justify-content: center;
+    }
+    .table table{
+margin:200px 300px ;
+    }
+</style>
+<body>
+    <div class="main">
+       <center> <h1>User Details</h1></center>
+        <table class="table table-border" >
+
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>E-mail</th>
+                    <th>Phone</th>
+                    <th>Birth</th>
+                    <th>Address</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in data %}
+                {% set i=loop.index%}
+                <tr>
+                    <td>{{i}}</td>
+                    <td>{{r['Name']}}</td>
+                    <td>{{r['email']}}</td>
+                    <td>{{r['phone']}}</td>
+                    <td>{{r['birth']}}</td>
+                    <td>{{r['address']}}</td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <center>
+        <div class="btn">
+          <a href="{{url_for('home')}}" class="btn btn-success btn-block">HOME</a>
+        </div>
+    </center>
+    </div>
+</body>
+</html>
